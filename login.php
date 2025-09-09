@@ -9,14 +9,14 @@ if ($mysqli->connect_errno) {
 
 session_start();
 
-// 2) Logout
+
 if (isset($_GET['logout'])) {
     session_destroy();
     header("Location: login.php");
     exit;
 }
 
-// 3) Login
+
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $_POST["username"] ?? "";
